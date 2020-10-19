@@ -21,7 +21,7 @@ export default class PostScreen extends React.Component {
     };
 
     /*getPhotoPermission = async () => {
-        if (Constants.platform.ios) {        // change something here
+        if (Constants.platform.ios) {  
             const { status } = await Permissions.askAsync(Permissions.CAMERA_ROLL);
 
             if (status != "granted") {
@@ -56,7 +56,7 @@ export default class PostScreen extends React.Component {
 
     render() {
         return (
-            <SafeAreaView style = {StyleSheet.container}>
+            <SafeAreaView style = {styles.container}>
                 <View style={styles.header}>
                     <TouchableOpacity onPress= {() => this.props.navigation.goBack()}>
                         <Ionicons name="md-arrow-back" size={24} color="#D8D9D8"></Ionicons>
@@ -67,7 +67,9 @@ export default class PostScreen extends React.Component {
                 </View>
 
                 <View style={styles.inputContainer}>
-                    <Image source={require("../assets/tempAvatar.jpg")} style={styles.avatar}></Image>
+                    <Image 
+                        source = {require("../assets/tempAvatar.jpg")} style={styles.avatar}
+                    />
                     <TextInput
                         autoFocus={true}
                         multiline={true}
@@ -101,7 +103,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "space-between",
         paddingHorizontal: 32,
-        paddingVertical: 12,
+        paddingVertical: 32,
         borderBottomWidth: 1,
         borderBottomColor: "#D8D9D8"
     },
@@ -121,5 +123,4 @@ const styles = StyleSheet.create({
         alignItems: "flex-end",
         marginHorizontal: 32
     }
-
 });

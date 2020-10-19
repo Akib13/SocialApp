@@ -10,7 +10,7 @@ posts = [
         name: "Jafsan Rani",
         text: "east or west- 6T is the best",
         timestamp: 1534986690783,
-        avatar: require("../assets/tempAvatar.jpg"),
+        avatar: require("../assets/tempImage4.jpg"),
         image: require("../assets/tempImage1.jpg")
     },
     {
@@ -18,7 +18,7 @@ posts = [
         name: "Rafsan Faisal Jany",
         text: "north, south, east or west- Gutu is the best teacher",
         timestamp: 153498669078324,
-        avatar: require("../assets/tempAvatar.jpg"),
+        avatar: require("../assets/tempImage1.jpg"),
         image: require("../assets/tempImage2.jpg")
     },
     {
@@ -26,7 +26,7 @@ posts = [
         name: "Gutu",
         text: "Heh aise amar sathe competition korte",
         timestamp: 15349866907853253,
-        avatar: require("../assets/tempAvatar.jpg"),
+        avatar: require("../assets/tempImage2.jpg"),
         image: require("../assets/tempImage3.jpg")
     },
     {
@@ -42,8 +42,8 @@ posts = [
 export default class HomeScreen extends React.Component {
     renderPost = post => {
         return (
-            <View style={styles.feedItem}>
-                <Image source={post.avatar} style={styles.avatar} />
+            <View style = {styles.feedItem}>
+                <Image source = {post.avatar} style={styles.avatar} />
                 <View style = {{ flex: 1 }}>
                     <View style = {{ flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
                         <View>
@@ -54,11 +54,11 @@ export default class HomeScreen extends React.Component {
                         <Ionicons name = "ios-more" size={24} color="#73788B" />
                     </View>
 
-                    <Text style={styles.post}>{post.text}</Text>
+                    <Text style = {styles.post}>{post.text}</Text>
 
-                    <Image source={post.image} style={styles.postImage} resizeMode="cover" />
+                    <Image source = {post.image} style={styles.postImage} resizeMode="cover" />
 
-                    <View style={{ flexDirection: "row" }}>
+                    <View style = {{ flexDirection: "row" }}>
                         <Ionicons name="ios-heart-empty" size={24} color="#73788B" style={{ marginRight: 16 }} />
                         <Ionicons name="ios-chatboxes" size={24} color="#73788B" />
                     </View>
@@ -70,13 +70,13 @@ export default class HomeScreen extends React.Component {
     render() {
         return (
             <View style = {styles.container}>
-                <View style={styles.header}>
-                    <Text style={styles.headerTitle}>Feed</Text>
+                <View style = {styles.header}>
+                    <Text style = {styles.headerTitle}>Feed</Text>
                 </View>
 
                 <FlatList
-                    style={styles.feed}
-                    data={posts}
+                    style = {styles.feed}
+                    data = {posts}
                     renderItem={({ item }) => this.renderPost(item)}
                     keyExtractor={item => item.id}
                     showsVerticalScrollIndicator={false}
@@ -121,6 +121,7 @@ const styles = StyleSheet.create({
     },
     avatar: {
         width: 36,
+        height: 36,
         borderRadius: 18,
         marginRight: 16
     },

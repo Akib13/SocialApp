@@ -35,7 +35,7 @@ export default class RegisterScreen extends React.Component {
     };
 
     handleSignUp = () => {
-        Fire.shared.createUser(thi.state.user);
+        Fire.shared.createUser(this.state.user);
     };
 
     render() {
@@ -54,7 +54,7 @@ export default class RegisterScreen extends React.Component {
                 ></Image>
 
                 <TouchableOpacity style={styles.back} onPress= {() => this.props.navigation.goBack()}>
-                    <Ionicons name = "iso-arrow-round-back" size={32} color="#FFF"></Ionicons>
+                    <Ionicons name = "md-arrow-back" size={32} color="#FFF"></Ionicons>
                 </TouchableOpacity>
 
                 <View style={{ position: "absolute", top: 64, alignItems:"center", width: "100%" }}>
@@ -80,7 +80,7 @@ export default class RegisterScreen extends React.Component {
                         <TextInput
                             style = {styles.input}
                             autoCapitalize="none"
-                            onChangeText = {name => this.setState({ ...this.state.user, name })}
+                            onChangeText = {name => this.setState({ user: { ...this.state.user, name } })}
                             value={this.state.user.name}    
                         ></TextInput>
                     </View>
@@ -89,7 +89,7 @@ export default class RegisterScreen extends React.Component {
                         <TextInput
                             style = {styles.input}
                             autoCapitalize="none"
-                            onChangeText = {email => this.setState({ ...this.state.user, email })}
+                            onChangeText = {email => this.setState({ user: { ...this.state.user, email } })}
                             value={this.state.user.email}    
                         ></TextInput>
                     </View>
@@ -100,7 +100,7 @@ export default class RegisterScreen extends React.Component {
                             style = {styles.input} 
                             secureTextEntry 
                             autoCapitalize="none"
-                            onChangeText = {password => this.setState({ ...this.state.user, password })}
+                            onChangeText = {password => this.setState({ user: { ...this.state.user, password } })}
                             value={this.state.user.password} 
                         ></TextInput>
                     </View>

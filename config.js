@@ -1,3 +1,5 @@
+import React from "react";
+import firebase from "firebase";
 
 export default FirebaseKeys = {
     apiKey: "AIzaSyDGJcodY6dTKi79ee5wVizsCqeXCkOIl2E",

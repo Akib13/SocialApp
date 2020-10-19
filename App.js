@@ -79,7 +79,6 @@ const AppContainer = createStackNavigator(
             tabBarIcon: ({tintColor}) => <Ionicons name = "ios-person" size = {24} color = {tintColor} />
           }
         }
-    
       },
       {
         defaultNavigationOptions: {
@@ -114,7 +113,7 @@ const AuthStack = createStackNavigator (
   {
     Login: LoginScreen,
     Register: RegisterScreen
-  }
+  },
 );
 
 export default createAppContainer(

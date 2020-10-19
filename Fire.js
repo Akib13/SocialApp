@@ -1,12 +1,13 @@
 //import firebaseconfig from "./App"; 
 import FirebaseKeys from "./config";
 import firebase from "firebase";
+require("firebase/firestore");
 
 class Fire {
     constructor() { 
         //firebase.initializeApp(FirebaseKeys);
         if(!firebase.app.length){
-            firebase.initializeApp(FireBaseKeys);
+            firebase.initializeApp(FirebaseKeys);
         }
     }
 
@@ -56,7 +57,7 @@ class Fire {
     };
 
     createUser = async user => {
-        let remoteUri = null
+        let remoteUri = null;
 
         try{
             await firebase.auth().createUserWithEmailAndPassword(user.email,user.password);
@@ -85,15 +86,15 @@ class Fire {
 
     get firestore () {
         return firebase.firestore();
-    }
+    };
 
     get uid() {
         return (firebase.auth().currentUser || {}).uid;
-    }
+    };
 
     get timestamp() {
         return Date.now();
-    }
+    };
 }
 
 Fire.shared = new Fire();

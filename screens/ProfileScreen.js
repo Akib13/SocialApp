@@ -26,11 +26,11 @@ export default class ProfileScreen extends React.Component {
 
     render() {
         return (
-            <View style = {StyleSheet.container}>
-                <View style={{ marginTop: 64, alignItems: "center" }}>
-                    <View style={StyleSheet.avatarContainer}>
-                        <Image 
-                            style={StyleSheet.avatar} 
+            <View style = {styles.container}>
+                <View style = {{ marginTop: 64, alignItems: "center" }}>
+                    <View style = {styles.avatarContainer}>
+                        <Image
+                            style={styles.avatar} 
                             source={
                                 this.state.user.avatar
                                     ? { uri: this.state.user.avatar }
@@ -39,7 +39,9 @@ export default class ProfileScreen extends React.Component {
                         />
                     </View>
 
-                    <Text style={styles.name}>{this.state.user.name}</Text>
+                    <Text
+                        style={styles.name}>{this.state.user.name}
+                    </Text>
                 </View>
 
                 <View style={styles.statsContainer}>
@@ -62,7 +64,7 @@ export default class ProfileScreen extends React.Component {
                 <Button 
                     onPress={() => {
                         Fire.shared.signOut();
-                    }} 
+                    }}
                     title="Log out" 
                 />
             </View>
